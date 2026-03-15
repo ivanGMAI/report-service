@@ -1,0 +1,20 @@
+[project]
+name = "report-service"
+version = "0.1.0"
+description = "Report Service for Kaspersky"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.30.0",
+    "python-multipart>=0.0.20",
+    "openpyxl>=3.1.5",
+    "mawo-pymorphy3==1.0.4",
+]
+
+[build-system]
+requires = ["setuptools>=69.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["api*", "domain*", "application*", "infrastructure*"]
+namespaces = false
