@@ -1,29 +1,13 @@
 from mawo_pymorphy3 import get_global_analyzer
 from domain.value_objects.word import Word
 from functools import lru_cache
+from ..constans.verb_ending import VERB_ENDINGS
 
 
 class RussianLemmatizer:
     def __init__(self) -> None:
         self._analyzer = get_global_analyzer()
-        self.verb_endings = (
-            "у",
-            "ю",
-            "ешь",
-            "ёшь",
-            "ет",
-            "ёт",
-            "ем",
-            "ём",
-            "ете",
-            "ёте",
-            "ут",
-            "ют",
-            "л",
-            "ла",
-            "ло",
-            "ли",
-        )
+        self.verb_endings = VERB_ENDINGS
 
     @lru_cache(maxsize=10000)
     def get_lemma(self, word_text: str) -> Word:
@@ -48,10 +32,10 @@ class RussianLemmatizer:
 
         tag_str = str(best_parse.tag)
         if (
-            "VERB" in tag_str
-            or "INFN" in tag_str
-            or "PRTS" in tag_str
-            or "GRND" in tag_str
+                "VERB" in tag_str
+                or "INFN" in tag_str
+                or "PRTS" in tag_str
+                or "GRND" in tag_str
         ):
             for form in best_parse.lexeme:
                 if "INFN" in str(form.tag):
