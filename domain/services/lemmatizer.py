@@ -32,10 +32,10 @@ class RussianLemmatizer:
 
         tag_str = str(best_parse.tag)
         if (
-                "VERB" in tag_str
-                or "INFN" in tag_str
-                or "PRTS" in tag_str
-                or "GRND" in tag_str
+            "VERB" in tag_str
+            or "INFN" in tag_str
+            or "PRTS" in tag_str
+            or "GRND" in tag_str
         ):
             for form in best_parse.lexeme:
                 if "INFN" in str(form.tag):
