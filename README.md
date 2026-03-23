@@ -19,7 +19,7 @@
 - **Python 3.13+**
 - **FastAPI** — веб-фреймворк
 - **Uvicorn** — ASGI-сервер
-- **pymorphy3 / mawo-pymorphy3** — лемматизация русского языка
+- **mawo-pymorphy3** — лемматизация русского языка
 - **openpyxl** — генерация Excel-файлов
 - **asyncio** — асинхронная обработка
 
